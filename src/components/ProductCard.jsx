@@ -1,18 +1,22 @@
 import React from 'react';
 import styles from '../styles/ProductCard.module.css';
+import { Button, Card, CardContent, CardMedia } from '@mui/material/';
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, onRemove }) => {
+  const { id, name, price, inStock, image } = product;
+  const outOfStockClasses = `${styles.outOfStockClass} outOfStockClass`;
   return (
-    <div className>
-      {/* TODO: Apply conditional class to <div> above for out-of-stock items */}
-      
-      {/* TODO: Display product name */}
-
-      {/* TODO: Display product price */}
-
-      {/* TODO: Show if the product is in stock or out of stock */}
-      
-    </div>
+    <Card variant="outlined" sx={{ maxWidth: 900 }}>
+      <div className={!inStock ? outOfStockClasses : ""}>
+        {image && <img src={image} alt={`${name} image`} />}
+        <h3>{name}</h3>
+        <p>{price}</p>
+        <p>{inStock ? "In Stock" : "Out of Stock"}</p>
+      </div>
+      <Button variant="outlined" color="error" onClick={() => onRemove(id)}>
+        Remove item
+      </Button>
+    </Card>
   );
 };
 

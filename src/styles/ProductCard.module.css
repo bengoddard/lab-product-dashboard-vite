@@ -1,3 +1,62 @@
 /* TODO: Style the product card container */
 
 /* TODO: Add special styling for out-of-stock products */
+.card {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 1rem;
+  align-items: center;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 0.75rem 0;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+
+.outOfStockClass {
+  background: #ffe5e5; /* subtle red for OOS */
+  opacity: 0.9;
+}
+
+.removeButton {
+  margin-top: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.removeButton:hover {
+  background-color: #c9302c;
+}
+
+.image {
+  border-radius: 8px;
+  object-fit: cover;
+  width: 150px;
+  height: 150px;
+}
+
+.body {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.price {
+  margin: 0;
+  font-weight: 600;
+}
+
+.status {
+  margin: 0.25rem 0 0;
+  font-weight: 500;
+  color: #333;
+}
